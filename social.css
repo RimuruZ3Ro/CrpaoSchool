@@ -1,0 +1,80 @@
+/* โครงลิสต์ไอคอน */
+.social_media {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 18px;          /* ระยะห่างระหว่างปุ่ม */
+  margin: 0;
+  padding-right: 20px;  /* ปรับให้พอดี header */
+}
+
+/* ปุ่มกลมพื้นขาว */
+.social_media .social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #e9e9e9; /* เส้นขอบบาง ๆ */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+
+/* ขนาดไอคอน */
+.social_media .social-btn i {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* สีไอคอน (ปกติพื้นขาว ไอคอนเป็นสี) */
+.social_media .facebook i   { color: #1877F2; }
+.social_media .youtube  i   { color: #FF0000; }
+
+/* Instagram ให้เป็นไล่สี */
+.social_media .instagram i {
+  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;  /* ทำตัวอักษรโปร่ง เห็นไล่สี */
+}
+
+/* เพิ่มแบรนด์อื่น (ถ้าใช้) */
+/* .social_media .x i      { color: #111; }
+.social_media .tiktok i { color: #111; } */
+
+/* ยกปุ่มขึ้น + เงาคมขึ้น */
+.social_media .social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  border-color: #dcdcdc;
+}
+
+/* Hover แบบ invert: พื้นเป็นสีแบรนด์ ไอคอนเป็นสีขาว */
+.social_media .facebook:hover   { background: #1877F2; }
+.social_media .facebook:hover i { color: #fff; }
+
+.social_media .youtube:hover    { background: #FF0000; }
+.social_media .youtube:hover i  { color: #fff; }
+
+/* Instagram ตอน hover ให้พื้นเป็นไล่สีและไอคอนเป็นขาว */
+.social_media .instagram:hover {
+  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+.social_media .instagram:hover i {
+  background: none;
+  -webkit-text-fill-color: #fff;
+  color: #fff;
+}
+
+/* X / TikTok (ถ้าใช้) */
+/* .social_media .x:hover,
+.social_media .tiktok:hover {
+  background: #111;
+}
+.social_media .x:hover i,
+.social_media .tiktok:hover i {
+  color: #fff;
+} */

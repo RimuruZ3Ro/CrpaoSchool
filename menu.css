@@ -1,0 +1,82 @@
+/* เมนูหลัก */
+ 
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.menu ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #00c0ff;
+}
+
+.menu ul li a #arrow{
+    transition: transform 0.3s;
+}
+
+.menu ul li a:hover #arrow{
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+}
+
+/* เมนูย่อย */
+
+.menu ul li .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: none;
+    flex-direction: column;
+    min-width: 250px;
+    z-index: 10;
+    animation: dropdown 0.5s ease forwards;
+}
+
+.menu ul li:hover .submenu {
+    display: flex;
+}
+
+@keyframes dropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* รายการในเมนูย่อย */
+
+.menu ul li .submenu li {
+    border-bottom: 2px solid #d2d2d2;
+}
+
+.menu ul li .submenu li a {
+    padding: 10px;
+    color: #333;
+}
+
+.menu ul li .submenu li a:hover {
+    padding-left: 30px;
+    background-color: #00c0ff;
+}

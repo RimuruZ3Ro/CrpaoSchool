@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+    
+
+/* บนสุดของทุกหน้า */
+
+.header_wrapper .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    background: linear-gradient(45deg, #3768ee, #39c8f7);
+}
+
+.logo-custom {
+    height: 60px;
+    margin-right: 20px;
+}
+
+/* .school-name {
+    color: #ffffff;
+    flex-grow: 1;
+}
+
+.school-name h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.school-name h2 {
+    font-size: 16px;
+    margin: 0;
+} */
+
+/* เนื้อหาหน้าแรก */
+
+.new {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.new h2 {
+  font-size: 28px;
+  color: #333333;
+  border-bottom: 2px solid #333333;
+  display: inline-block;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+/* layout การ์ดข่าว */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 330px); /* การ์ดกว้าง 280px */
+  justify-content: center;  /* จัดให้อยู่ตรงกลาง */
+  gap: 150px;
+}
+
+/* card ดูพรีเมียม */
+.news-card{
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+  overflow:hidden;
+  transition:transform .25s, box-shadow .25s;
+}
+.news-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(0,0,0,.16);
+}
+
+.news-info{
+     padding:12px 14px; 
+}
+.news-info .date{ 
+    color:#0aa1ff; font-size:14px; 
+}
+
+/* ช่องรูปมีสัดส่วนคงที่เหมือนโปสเตอร์ */
+.news-card .thumb{
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* ปรับได้: 3/4 หรือ 4/5 ตามที่ชอบ */
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f3f3f3;
+}
+
+/* ให้รูปเติมเต็มช่องด้วยการครอปแบบสวย ๆ */
+.news-card .thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* << สำคัญ */
+  object-position: center;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Lightbox Popup ===== */
+.lightbox {
+  display: none;                /* ซ่อนค่าเริ่มต้น */
+  position: fixed;
+  inset: 0;                     /* top, right, bottom, left = 0 */
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.85); /* พื้นหลังดำโปร่ง */
+  align-items: center;          /* จัดให้อยู่กลางแนวตั้ง */
+  justify-content: center;      /* จัดให้อยู่กลางแนวนอน */
+  padding: 20px;
+}
+
+/* โชว์ popup เมื่อมีคลาส .show */
+.lightbox.show {
+  display: flex;
+}
+
+/* เนื้อหารูป */
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+/* ปุ่มปิด */
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.lightbox .close:hover {
+  color: #ff4444;
+}
+
+/* ป้องกันเลื่อนเวลาเปิด popup */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* effect ตอนเปิด */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* ล้างสุดของทุกหน้า */
+
+.footer_wrapper {
+    position: relative;
+    background-color: #dd31ae;
+    color: #ffffff;
+    text-align: left;
+    padding: 20px 0;
+}
+
+.footer_wrapper .footer_container img {
+    height: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: 2px solid #ffffff;
+}
+
+.footer_wrapper .footer_container {
+    display: flex;
+    align-items: center;
+}
+
+.footer_wrapper .footer_container .contact_info {
+    padding-left: 20px;
+    color: #ffffff;
+}
+
+.footer_wrapper .footer_container .contact_info h2{
+    padding-bottom: 20px;
+    color: #ffffff;
+}
+
+.footer_wrapper .footer_container .maps {
+    padding-left: 20px;
+}
+
+.footer_wrapper .footer_container .credits {
+    padding-left: 20px;
+}
